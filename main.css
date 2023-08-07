@@ -79,3 +79,24 @@
     animation-iteration-count: infinite;
 }
 
+.game-menu{
+    display: none;
+    justify-content: center;
+}
+
+.game-menu button{
+    width: 75px;
+    height: 35px;
+    transition: width 0.25s, height 0.25s, font-size 0.15s, background-color 0.1s;
+}
+
+.game-menu button:hover{
+    width: 80px;
+    height: 40px;
+    font-size: 110%;
+    color: white;
+    background-color: black;
+}
+
+.restart-button{
+}
