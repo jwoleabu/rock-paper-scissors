@@ -1,0 +1,81 @@
+*{
+    box-sizing: border-box;
+}
+
+.title-text{
+    text-align: center;
+}
+
+.play-div{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play-div button{
+    display: none;
+    width: 100px;
+    height: 40px;
+    transition: width 0.25s, height 0.25s;
+}
+
+.play-div button:hover{
+    width: 105px;
+    height: 45px;
+}
+
+
+.options{
+    margin-top: 200px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.options button{
+    width: 350px;
+    height: 250px;
+    transition: width 0.25s, height 0.25s, font-size 0.15s, background-color 0.1s;
+}
+
+.options :hover{
+    width: 425px;
+    height: 255px;
+    font-size: 40px;
+    color: white;
+    background-color: black;
+}
+
+.narrate-text{
+    text-align: center;
+}
+
+.moves-left{
+    text-align: center;
+}
+
+/* The animation code */
+@keyframes grow {
+    0%  {font-size: 30px}
+    25% {font-size: 50px}
+    50% {font-size: 80px}
+    100% {font-size: 100%}
+}
+
+@keyframes pulse {
+    0%  {font-size: 100%}
+    50% {font-size: 120%}
+    100% {font-size: 100%}
+}
+
+.moves-left{
+    max-block-size: 20px;
+    animation-name: pulse;
+    animation-play-state: paused;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
