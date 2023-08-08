@@ -28,7 +28,7 @@
 
 
 .options{
-    margin-top: 200px;
+    margin-top: 150px;
     height: 100px;
     display: flex;
     align-items: center;
@@ -59,38 +59,35 @@
 
 /* The animation code */
 @keyframes grow {
-    0%  {font-size: 30px}
-    25% {font-size: 50px}
-    50% {font-size: 80px}
+    0%  {font-size: 100%}
+    25% {font-size: 110%}
+    50% {font-size: 130%}
     100% {font-size: 100%}
 }
 
 @keyframes pulse {
-    0%  {font-size: 100%}
-    50% {font-size: 120%}
-    100% {font-size: 100%}
+    0%  {background-image: none}
+    50% {background-image: none}
+    100% {background-image: none}
 }
 
 .moves-left{
     max-block-size: 20px;
-    animation-name: pulse;
-    animation-play-state: paused;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
 }
 
-.game-menu{
+.endgame-menu{
     display: none;
     justify-content: center;
 }
 
-.game-menu button{
+.endgame-menu button{
     width: 75px;
     height: 35px;
     transition: width 0.25s, height 0.25s, font-size 0.15s, background-color 0.1s;
+    margin-bottom: 40px;
 }
 
-.game-menu button:hover{
+.endgame-menu button:hover{
     width: 80px;
     height: 40px;
     font-size: 110%;
@@ -98,5 +95,44 @@
     background-color: black;
 }
 
+
 .restart-button{
+
+}
+
+.points-display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.points-display img{
+    width: 32px;
+    height: 32px;
+}
+
+.points-display p{
+    display: inline-block;
+    width: 32px;
+    margin-top: 0px;
+    text-align: center;
+}
+
+.player{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 50px;
+}
+
+.computer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 50px;
+}
+
+body{
+    animation-name: pulse;
+    animation-duration: 1s;
 }

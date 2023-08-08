@@ -2,6 +2,8 @@ const game = () => {
     let playerScore = 0;
     let computerScore = 0;
     let moves = 0;
+    const playerPoint = document.querySelector('.player-points');
+    const computerPoint = document.querySelector('.computer-points');
 
 const playGame = () => {
   const rockButton = document.querySelector(".rock");
@@ -44,29 +46,38 @@ const winner = (player,computer) => {
     if (typing[player].strongTo === computer){
         narrator.textContent = `You won, you played ${player} against computer's ${computer}.`;
         playerScore++;
+        playerPoint.textContent = playerScore;
+        computerPoint.textContent = computerScore;
     }
 
     else if (typing[player].weakTo === computer){
         narrator.textContent = `Computer won, you played ${player} against computer's ${computer}.`;
         computerScore++;
+        computerPoint.textContent = computerScore;
+        playerPoint.textContent = playerScore;
     }
 
     else if (player === computer){
         narrator.textContent = `Tie, you played ${player} against computer's ${computer}.`;
+        computerPoint.textContent = computerScore;
+        playerPoint.textContent = playerScore;
     }
 
 }
 
 const gameOver = (playerOptions, moveLeft) => {
     const restartButton = document.querySelector('.restart-button');
-    const menuBar = document.querySelector('.game-menu');
+    const menuBar = document.querySelector('.endgame-menu');
     const options = document.querySelector('.options');
     let narrate = document.querySelector(".narrate-text");
     let movesText = document.querySelector(".moves-left");
     options.style.display = 'none';
-    movesText.textContent = `Game Over, player: ${playerScore} computer: ${computerScore}`
+    movesText.textContent = `Game Over`
     if(playerScore > computerScore)
     narrate.innerText = 'You win!';
+    else if (playerScore === computerScore){
+        narrate.innerText = 'You tied!'
+    }
     else{
         narrate.innerText = 'You have been vanquished by the computer...'
     }
@@ -74,6 +85,10 @@ const gameOver = (playerOptions, moveLeft) => {
     restartButton.addEventListener('click',()=>{
 
         moves = 0;
+        playerScore = 0;
+        computerScore =0;
+        playerPoint.textContent = '0';
+        computerPoint.textContent = '0';
         menuBar.style.display = 'none';
         options.style.display = 'flex';
         movesText.textContent = 'You have 10 tries'
